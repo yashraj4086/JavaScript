@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 21 - Local Storage</title>
+</head>
+<body>
+  <h2>Lesson 21: Local Storage Example</h2>
+
+  <input type="text" id="storageInput" placeholder="Enter something to save">
+  <button onclick="saveData()">Save to Local Storage</button>
+  <button onclick="loadData()">Load from Local Storage</button>
+  <button onclick="clearData()">Clear Storage</button>
+  
+  <p id="displayData"></p>
+
+  <script>
+    function saveData() {
+      let data = document.getElementById("storageInput").value;
+      localStorage.setItem("userData", data);
+      alert("Data saved successfully!");
+    }
+    
+    function loadData() {
+      let savedData = localStorage.getItem("userData");
+      if (savedData) {
+        document.getElementById("displayData").innerHTML = "Saved Data: " + savedData;
+      } else {
+        alert("No data found in storage!");
+      }
+    }
+    
+    function clearData() {
+      localStorage.removeItem("userData");
+      document.getElementById("displayData").innerHTML = "";
+      alert("Data cleared!");
+    }
+  </script>
+</body>
+</html>

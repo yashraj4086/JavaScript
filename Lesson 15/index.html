@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 24 - Arrow Functions</title>
+</head>
+<body>
+  <h2>Lesson 24: Arrow Functions Example</h2>
+
+  <button onclick="testRegularFunction()">Regular Function</button>
+  <button onclick="testArrowFunction()">Arrow Function</button>
+  <button onclick="useArrayMethods()">Array Methods with Arrow</button>
+  
+  <p id="arrowOutput"></p>
+
+  <script>
+    // Regular function
+    function testRegularFunction() {
+      let result = multiply(5, 3);
+      document.getElementById("arrowOutput").innerHTML = 
+        "Regular Function Result: 5 * 3 = " + result;
+    }
+    
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    // Arrow function
+    const testArrowFunction = () => {
+      const multiplyArrow = (a, b) => a * b;
+      let result = multiplyArrow(5, 3);
+      document.getElementById("arrowOutput").innerHTML = 
+        "Arrow Function Result: 5 * 3 = " + result;
+    }
+
+    // Array methods with arrow functions
+    function useArrayMethods() {
+      let numbers = [1, 2, 3, 4, 5];
+      
+      // Map with arrow function
+      let squared = numbers.map(num => num * num);
+      
+      // Filter with arrow function
+      let evenNumbers = numbers.filter(num => num % 2 === 0);
+      
+      // Reduce with arrow function
+      let sum = numbers.reduce((total, num) => total + num, 0);
+      
+      document.getElementById("arrowOutput").innerHTML = 
+        "Original: [" + numbers + "]<br>" +
+        "Squared: [" + squared + "]<br>" +
+        "Even Numbers: [" + evenNumbers + "]<br>" +
+        "Sum: " + sum;
+    }
+  </script>
+</body>
+</html>

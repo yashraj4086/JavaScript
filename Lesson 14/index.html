@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 23 - Error Handling</title>
+</head>
+<body>
+  <h2>Lesson 23: Error Handling with try-catch</h2>
+
+  <button onclick="divideNumbers()">Divide Numbers</button>
+  <button onclick="parseJson()">Parse JSON</button>
+  <p id="errorResult"></p>
+
+  <script>
+    function divideNumbers() {
+      let num1 = parseFloat(prompt("Enter first number:"));
+      let num2 = parseFloat(prompt("Enter second number:"));
+      
+      try {
+        if (num2 === 0) {
+          throw "Division by zero is not allowed!";
+        }
+        if (isNaN(num1) || isNaN(num2)) {
+          throw "Please enter valid numbers!";
+        }
+        
+        let result = num1 / num2;
+        document.getElementById("errorResult").innerHTML = 
+          "Result: " + num1 + " / " + num2 + " = " + result;
+      } catch (error) {
+        document.getElementById("errorResult").innerHTML = 
+          "Error: " + error;
+      }
+    }
+
+    function parseJson() {
+      let jsonString = '{"name": "John", "age": 25}'; // Valid JSON
+      // let jsonString = '{name: John}'; // Invalid JSON - try this too
+      
+      try {
+        let user = JSON.parse(jsonString);
+        document.getElementById("errorResult").innerHTML = 
+          "JSON Parsed Successfully! Name: " + user.name + ", Age: " + user.age;
+      } catch (error) {
+        document.getElementById("errorResult").innerHTML = 
+          "JSON Parse Error: " + error.message;
+      }
+    }
+  </script>
+</body>
+</html>

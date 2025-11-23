@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 20 - Form Validation</title>
+</head>
+<body>
+  <h2>Lesson 20: Form Validation Example</h2>
+
+  <form onsubmit="return validateForm()">
+    <input type="text" id="username" placeholder="Enter username (min 3 characters)">
+    <br><br>
+    <input type="email" id="email" placeholder="Enter email">
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let username = document.getElementById("username").value;
+      let email = document.getElementById("email").value;
+      
+      // Username validation
+      if (username.length < 3) {
+        alert("Username must be at least 3 characters long!");
+        return false;
+      }
+      
+      // Email validation (basic)
+      if (!email.includes("@")) {
+        alert("Please enter a valid email address!");
+        return false;
+      }
+      
+      alert("Form submitted successfully! ✅");
+      return true;
+    }
+  </script>
+</body>
+</html>
