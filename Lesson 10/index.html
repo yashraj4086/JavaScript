@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 19 - Date Object</title>
+</head>
+<body>
+  <h2>Lesson 19: Date Object Example</h2>
+  <p id="currentDate"></p>
+
+  <script>
+    // Date object ke examples
+    let now = new Date();
+    
+    document.getElementById("currentDate").innerHTML = "Current Date: " + now;
+    
+    console.log("Full Date:", now);
+    console.log("Year:", now.getFullYear());
+    console.log("Month:", now.getMonth() + 1); // Month 0 se start hota hai
+    console.log("Date:", now.getDate());
+    console.log("Hours:", now.getHours());
+    console.log("Minutes:", now.getMinutes());
+  </script>
+</body>
+</html>

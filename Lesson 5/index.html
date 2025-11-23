@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 14 - Timer Functions</title>
+</head>
+<body>
+  <h2>Lesson 14: setTimeout & setInterval Example</h2>
+
+  <button onclick="showMessage()">Show After 3 Seconds</button>
+  <button onclick="startTimer()">Start Counter</button>
+  <h3 id="counter">Counter: 0</h3>
+
+  <script>
+    // setTimeout - delay ke baad code chalana
+    function showMessage() {
+      setTimeout(function() {
+        alert("3 seconds ho gaye ⏰");
+      }, 100);
+    }
+
+    // setInterval - har kuch second baad repeat karna
+    let count = 0;
+    function startTimer() {
+      setInterval(function() {
+        count++;
+        document.getElementById("counter").innerHTML = "Counter: " + count;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

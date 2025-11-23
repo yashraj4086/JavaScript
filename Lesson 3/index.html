@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 12 - User Input</title>
+</head>
+<body>
+  <h2>Lesson 12: User Input Example</h2>
+
+  <button onclick="getName()">Enter Your Name</button>
+  <h1 id="showName"></h1>
+
+  <script>
+    // prompt() se user input lete hain
+    function getName() {
+      let name = prompt("Enter your name:");
+      document.getElementById("showName").innerHTML = "Welcome " + name + " 💫";
+    }
+  </script>
+</body>
+</html>

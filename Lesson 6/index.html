@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 15 - Change Style</title>
+  <style>
+    body{
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="heading">Lesson 15: Change Style Example Welocme to <U>TIMES TECH</U></h2>
+
+  <button onclick="changeColor()">Change Color</button>
+  <button onclick="changeSize()">Change Size</button>
+
+  <script>
+    // JavaScript se CSS style change karna
+    function changeColor() {
+      document.getElementById("heading").style.color = "#870438";
+    }
+
+    function changeSize() {
+      document.getElementById("heading").style.fontSize = "5em";
+    }
+  </script>
+</body>
+</html>

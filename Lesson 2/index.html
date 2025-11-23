@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 11 - Events</title>
+</head>
+<body>
+<h2>Lesson 11: JavaScript Events Example</h2>
+
+  
+<!-- Button par click event -->
+  <button onclick="sayHello()">Click Me</button>
+
+  <!-- Mouseover event -->
+  <p onmouseover="hoverText()" id="msg">Mouse over this text 👇</p>
+
+  <script>
+    // onclick event se function call hoga
+    //Lesson 11 = "User kare action → Mai respond karoon"
+    function sayHello() {
+      alert("Button Clicked! 👋");
+    }
+
+    // onmouseover event se text change hoga
+    function hoverText() {
+      document.getElementById("msg").innerHTML = "You hovered over the text 😎";
+    }
+  </script>
+</body>
+</html>
